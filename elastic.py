@@ -122,7 +122,7 @@ def send_by_mail(fromaddr, toaddr):
 
           msg.attach(part)
 
-          server = smtplib.SMTP('relay.matomy.local', 25)
+          server = smtplib.SMTP('your smtp server', 25)
 #server.starttls()
 #server.login(fromaddr, "")
           text = msg.as_string()
@@ -158,8 +158,8 @@ def main():
   results1 = json.loads(response1.content.decode())
   androidjson = '/tmp/android.json'
   data = json.dumps(androidjson)
-  fromaddr = "yossi.s@mobfox.com"
-  toaddr = 'yossi.s@mobfox.com'
+  fromaddr = "from email"
+  toaddr = 'to email'
   search_android(uri, token, query_android)
   search_ios(uri, token, query_ios)
   dump_to_file_android(results, response)
